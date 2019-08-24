@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="ToolingControl.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <title>CONTROL TOOLING</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <link href="css/ionicons.min.css" rel="stylesheet" />
+    <link href="css/themify-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto|Roboto+Condensed" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <%-- =========================== NAVBAR ==========================================--%>
+
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="Home.aspx">
+                    <img id="logo" src="img/safran.png" height="30" class="d-inline-block align-top" alt="Logo">
+                    CONTROL TOOLING</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-md-center" id="mynavbar">
+                    <ul class="navbar-nav">
+                        <%-- LINKS DE NAVEGACION --%>
+
+                         <li class="nav-item">
+                            <a class="nav-link" href="Home.aspx"><i class="ion-md-home"></i>Home</a>
+                        </li>
+
+                        <%-- SENCILLO --%>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Repair.aspx">Reparaciones</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="AddTooling.aspx">Catalogo</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Admin.aspx">Usuarios</a>
+                        </li>
+
+                        <%-- DROPDOWN --%>
+
+                        <%--<li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" >Admin</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="Admin.aspx" target="_blank">Usuarios</a>
+                                <a class="dropdown-item" href="AddTooling.aspx" target="_blank">Agregar Tooling</a>
+                                <a class="dropdown-item" href="#" target="_blank">SubMenu 3</a>
+                            </div>
+                        </li>--%>
+
+                         <%-- LOGIN --%>
+
+                        <li class="nav-item" id="Login" runat="server">
+                            <a class="nav-link" href="login.aspx"><i class="ti-user"></i>Login</a>
+                        </li>
+                        <li class="nav-item" id="Logout" runat="server">
+                            <a class="nav-link" href="login.aspx"><i class="ti-user"></i>Logout</a>
+                        </li>
+
+                        <li class="nav-item" id="User" runat="server">
+                            <a class="nav-link">Hello, <asp:LoginName runat="server" />!</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <%-- =========================== NAVBAR ==========================================--%>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <script src='<%: ResolveClientUrl("~/js/jquery-3.3.1.min.js") %>'></script>
+            <script src='<%: ResolveClientUrl("~/js/scrollreveal.min.js") %>'></script>
+            <script src='<%: ResolveClientUrl("~/js/popper.min.js") %>'></script>
+            <script src='<%: ResolveClientUrl("~/js/bootstrap.min.js") %>'></script>
+            <script src='<%: ResolveClientUrl("~/js/modernizr-3.6.0.min.js") %>'></script>
+            <script src='<%: ResolveClientUrl("~/js/main.js") %>'></script>
+        </div>
+    </form>
+</body>
+</html>
